@@ -23,14 +23,11 @@ jobs:
         - name: Iniciando Build
           run: npm run build
 
-        - name: Pasta Build
-          run: cd build
-
         - name: Sync Files
           uses: SamKirkland/FTP-Deploy-Action@4.3.3
           with:
               server: ${{ secrets.FTP_HOST }}
               username: ${{ secrets.FTP_USER }}
               password: ${{ secrets.FTP_PWD }}
-              port: ${{ secrets.FTP_PORT }}
               server-dir: public_html/
+              local-dir: ./build/
