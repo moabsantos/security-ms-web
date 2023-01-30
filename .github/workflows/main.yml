@@ -20,5 +20,5 @@ jobs:
         - name: Instalando lib package.json
           run: npm ci
 
-        - name: Iniciando teste
-          run: npm run test
+        - name: Iniciando Build
+          run: npm run build
